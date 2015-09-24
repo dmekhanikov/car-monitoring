@@ -1,7 +1,7 @@
 package carmon.generator.ui;
 
 import carmon.generator.Car;
-import carmon.generator.SensorReader;
+import carmon.generator.EventSender;
 
 import javax.swing.*;
 import java.awt.*;
@@ -127,7 +127,7 @@ public class GeneratorWindow extends JFrame implements Car {
         EventQueue.invokeLater(() -> {
             GeneratorWindow generator = new GeneratorWindow();
             generator.setVisible(true);
-            new SensorReader(generator).schedule(SENSOR_READ_PERIOD);
+            new EventSender(generator).schedule(SENSOR_READ_PERIOD);
         });
     }
 }

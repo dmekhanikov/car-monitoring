@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class SensorDataController {
 
     @RequestMapping(value = "/carmon", method = RequestMethod.POST)
-    public void carmon(@RequestBody Event event) {
-        System.out.println(event.toJSON());
+    public Event carmon(@RequestBody Event event) {
+        return event;
     }
 }
