@@ -1,3 +1,4 @@
 rootProject.name = 'Car Monitoring'
 include 'common'
+include 'core'
 include 'generator'

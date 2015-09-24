@@ -1,7 +1,10 @@
 package carmon.events;
 
 public class TirePressure extends Event {
-    private final double pressure;
+    private double pressure;
+
+    public TirePressure() {
+    }
 
     public TirePressure(double pressure) {
         this.pressure = pressure;
