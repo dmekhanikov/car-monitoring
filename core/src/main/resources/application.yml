@@ -1,0 +1,11 @@
+pressure:
+  low: 1.5
+  normal: 1.6
+  max-loss-speed: 0.3
+  eps: 0.01
+
+speed:
+  eps: 2
+
+seat:
+  normal-exit-time: 1000

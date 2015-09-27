@@ -16,7 +16,6 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 public class EventSender {
-    private static final String API_URL = "http://localhost:8080/";
     private static final int THREADS_COUNT = 1;
 
     private final Car car;
@@ -25,7 +24,7 @@ public class EventSender {
     public EventSender(Car car) {
         this.car = car;
         RestAdapter restAdapter = new RestAdapter.Builder()
-                .setEndpoint(API_URL)
+                .setEndpoint(GeneratorParameters.getApiUrl())
                 .setConverter(new JacksonConverter())
                 .build();
         this.carmon = restAdapter.create(CarmonApiService.class);

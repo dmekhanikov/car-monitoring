@@ -2,6 +2,7 @@ package carmon.generator.ui;
 
 import carmon.generator.Car;
 import carmon.generator.EventSender;
+import carmon.generator.GeneratorParameters;
 
 import javax.swing.*;
 import java.awt.*;
@@ -19,8 +20,6 @@ public class GeneratorWindow extends JFrame implements Car {
     private static final int PRESSURE_MULTIPLIER = 10;
 
     private static final int THROW_OUT_SPEED = 100;
-
-    private static final long SENSOR_READ_PERIOD = 200;
 
     private boolean isDriverSeatOccupied;
 
@@ -127,7 +126,7 @@ public class GeneratorWindow extends JFrame implements Car {
         EventQueue.invokeLater(() -> {
             GeneratorWindow generator = new GeneratorWindow();
             generator.setVisible(true);
-            new EventSender(generator).schedule(SENSOR_READ_PERIOD);
+            new EventSender(generator).schedule(GeneratorParameters.getSendPeriod());
         });
     }
 }
