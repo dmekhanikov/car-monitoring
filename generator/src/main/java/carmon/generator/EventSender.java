@@ -37,6 +37,10 @@ public class EventSender {
     }
 
     private void sendEvents() {
+        long timestamp = System.currentTimeMillis();
+        CurrentSpeed currentSpeed = new CurrentSpeed(car.getCurrentSpeed(), timestamp);
+        TirePressure tirePressure = new TirePressure(car.getTirePressure(), timestamp);
+        DriverSeatOccupied driverSeatOccupied = new DriverSeatOccupied(car.isDriverSeatOccupied(), timestamp);
         Callback<Event> callback = new Callback<Event>() {
             @Override
             public void success(Event event, Response response) {}
@@ -46,8 +50,8 @@ public class EventSender {
                 error.printStackTrace();
             }
         };
-        carmon.sendEvent(new CurrentSpeed(car.getCurrentSpeed()), callback);
-        carmon.sendEvent(new TirePressure(car.getTirePressure()), callback);
-        carmon.sendEvent(new DriverSeatOccupied(car.isDriverSeatOccupied()), callback);
+        carmon.sendEvent(currentSpeed, callback);
+        carmon.sendEvent(tirePressure, callback);
+        carmon.sendEvent(driverSeatOccupied, callback);
     }
 }

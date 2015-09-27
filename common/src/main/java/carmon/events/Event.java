@@ -9,4 +9,16 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
         @JsonSubTypes.Type(value = DriverSeatOccupied.class),
         @JsonSubTypes.Type(value = TirePressure.class)
 })
-public abstract class Event {}
+public abstract class Event {
+    private long timestamp;
+
+    public Event() {}
+
+    public Event(long timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    public long getTimestamp() {
+        return timestamp;
+    }
+}
