@@ -9,8 +9,6 @@ public class IndicatorPanel {
     private boolean carStopped = true;
     private boolean occupantThrown;
 
-    private IndicatorPanel() {}
-
     public boolean isLossOfTirePressure() {
         return lossOfTirePressure;
     }

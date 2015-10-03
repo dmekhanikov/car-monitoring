@@ -22,4 +22,6 @@ dependencies {
     compile project(':common')
     compile 'org.springframework.boot:spring-boot-starter-web'
     compile 'com.espertech:esper:4.11.0'
+    testCompile 'junit:junit'
+    testCompile 'org.springframework:spring-test'
 }
